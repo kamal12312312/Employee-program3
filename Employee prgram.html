@@ -1,0 +1,48 @@
+#include <iostream>
+    #include <string>
+    using namespace std;
+    
+    
+    struct Employee {
+        int id;
+        string name;
+        string jobTitle;
+    };
+    
+    int main() {
+        
+        Employee employees[] = {
+            {1001, "Ahmed", "Software Engineer"},
+            {1002, "Sara", "Data Analyst"},
+            {1003, "Khaled", "HR Manager"},
+            {1004, "Mona", "Marketing Specialist"},
+            {1005,"Eyad" "Office Boy"},{1006,"Eslam","Saller"},{1007,"Ehab","Sponser"},
+            {1008,"Ebrahim","Saller"},{1009,"Kamal","manger"},{1010,"Ahmed","Driver"}
+        };
+    
+        
+        int numEmployees = sizeof(employees) / sizeof(employees[0]);
+    
+        
+        int id;
+        cout << "Enter Employee ID: ";
+        cin >> id;
+    
+        
+        bool found = false;
+        for (int i = 0; i < numEmployees; ++i) {
+            if (employees[i].id == id) {
+                cout << "Employee Name: " << employees[i].name << endl;
+                cout << "Job Title: " << employees[i].jobTitle << endl;
+                found = true;
+                break;
+            }
+        }
+    
+        
+        if (!found) {
+            cout << "Error: Invalid ID!" << endl;
+        }
+    
+        return 0;
+    }
